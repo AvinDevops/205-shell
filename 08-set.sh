@@ -2,6 +2,13 @@
 
 set -e
 
+error_handler(){
+    echo "error line no: $1"
+    echo "error command: $2"
+}
+
+trap 'error_handler ${LINENO} "$BASH_COMMAND"' ERR
+
 USERID=$(id -u)
 
 if [ $USERID -ne 0 ]
@@ -13,4 +20,7 @@ else
 fi
 
 dnf install mysqll -y
+
 dnf install nginx -y
+
+echo "script reached end!"
