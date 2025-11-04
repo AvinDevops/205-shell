@@ -15,4 +15,5 @@ FILE=$(find $SOURCEDIR -name "*.log" -mtime +14)
 while IFS= read -r line
 do
     echo "$line need to be deleted"
+    rm -rf $line
 done <<< $FILE
