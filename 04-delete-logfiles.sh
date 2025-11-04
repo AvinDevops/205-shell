@@ -5,9 +5,9 @@ SOURCEDIR=/home/ec2-user/logs
 if [ -d $SOURCEDIR ]
 then
     echo "source dir is existed."
-    exit 1
 else    
     echo "source dir is not there."
+    exit 1
 fi
 
 FILE=$(find $SOURCEDIR -name "*.log" -mtime +14)
