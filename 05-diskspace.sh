@@ -7,7 +7,7 @@ while IFS= read -r line
 do
     USAGE=$(echo $line | awk -F " " '{print $6F}' | cut -d "%" -f1)
     FOLDER=$(echo $line | awk -F " " '{print $NF}')
-    echo "$USAGE and $FOLDER"
+    # echo "$USAGE and $FOLDER"
     if [ $USAGE -ge $DISK_THRESHOLD ]
     then
         echo "this folder $FOLDER and $USAGE usage is more than threshold $DISK_THRESHOLD"
