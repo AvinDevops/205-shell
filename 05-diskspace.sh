@@ -16,4 +16,4 @@ do
 
 done <<< $DISK_SOURCE
 
-echo "$MESSAGE"
+echo -e "$MESSAGE"
