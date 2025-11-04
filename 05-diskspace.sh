@@ -2,7 +2,7 @@
 
 DISK_THRESHOLD=5
 DISK_SOURCE=$(df -hT | grep xfs)
-MESSAGE=""
+# MESSAGE=""
 
 while IFS= read -r line
 do
