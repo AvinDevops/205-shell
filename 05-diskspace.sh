@@ -2,6 +2,7 @@
 
 DISK_THRESHOLD=5
 DISK_SOURCE=$(df -hT | grep xfs)
+MESSAGE=""
 
 while IFS= read -r line
 do
@@ -10,7 +11,7 @@ do
     # echo "$USAGE and $FOLDER"
     if [ $USAGE -ge $DISK_THRESHOLD ]
     then
-        echo "this folder $FOLDER and $USAGE usage is more than threshold $DISK_THRESHOLD"
+        MESSAGE="this folder $FOLDER and $USAGE usage is more than threshold $DISK_THRESHOLD"
     fi
 
 done <<< $DISK_SOURCE
